@@ -1,0 +1,53 @@
+spring.jmx:
+    enabled: false
+    
+spring.datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:bootexample;MODE=MySQL
+    
+server:
+  port: 8090
+
+  
+security:
+        basic:
+              enabled: false
+  
+management:
+  port: 8091
+  security:
+              enabled: false
+  
+project:
+  name: udemy-rsmortgage-person-service
+  version: 0.1
+  description: udemy-rsmortgage-person-service
+  info:
+  build:
+  artifact: ${project.artifactId}
+  name: ${project.name}
+  description: ${project.description}
+  version: ${project.version}
+  
+  spring.jpa:
+  hibernate.ddl-auto: create-drop
+  
+---
+
+spring:
+    profiles: mysql
+    datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost/rsmortgage
+      username: root
+      password: root
+
+jpa:
+      hibernate:
+      dialect: org.hibernate.dialect.MySQLInnoDBDialect
+      ddl-auto: update
+  
+   
+    
+    
+    
